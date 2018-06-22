@@ -1,0 +1,23 @@
+<html ng-app = "AppData">
+    <head >
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+            <script type= "text/javascript" src="broadscript.js"></script>
+    </head>
+    <body>
+        <div  ng-controller = "MyController1">
+                <input type="button" value="Broadcast Down" 
+                ng-click="OnClick($event)" />
+            <h1>{{Message}}</h1>
+
+            <div  ng-controller = "MyController2">
+                <h1>{{Message}}</h1>
+
+                <div  ng-controller = "MyController3" >
+                        <input type="button" value="Emit Up" 
+                        ng-click="OnClick($event)" />
+                    <h1>{{Message}}</h1>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
