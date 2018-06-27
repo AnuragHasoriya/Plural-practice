@@ -16,6 +16,8 @@
             </div>
             <div ng-controller = "EventController">
                 <img ng-src = "{{ event.imageUrl }}" alt = "Angular"/>
+                <button type="button" class= "btn btn-primary" ng-click= "scrollToSession()">Scroll </button>
+
                 <div class = "row">
                     <div class = "span11">
                         <h2 >{{ event.name | uppercase }}<br></h2>
@@ -46,7 +48,7 @@
                     <option selected value= "Introductory">Introductory</option>
                 </select>
                 <ul class= "thumbnails">
-                    <li ng-repeat= "session in event.sessions | orderBy: sortorder | filter: query">        
+                    <li ng-repeat= "session in event.sessions | orderBy: sortorder | filter: query" id="session{{session.id}}">        
                         <div class= "row session">
                             <div class= "span0 well votingWidget">
                                 <div class= "votingButton" ng-click= "upVoteSession(session)">
@@ -73,10 +75,13 @@
         </div>
         <script src = "lib\angular\angular.js"> </script>
         <script src = "lib\angular\angular-sanitize.js"> </script>
+        <script src = "lib\angular\angular-resource.js"> </script>
+        <script src = "lib\angular\angular-sanitize.min.js"> </script>
         <script src = "lib\jquery.min.js"> </script>
         <script src = "lib\bootstrap.min.js"> </script>
         <script src = "js/app.js"> </script>
         <script src = "js/controllers/EventController.js"> </script>
+        <script src = "js\sevices\EventData.service.js"> </script>
         <script src = "js\filters.js"> </script>
     </body>
 
