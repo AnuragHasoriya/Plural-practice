@@ -1,0 +1,22 @@
+<div >
+    {{username}} 
+    Name:{{user.name}}
+    <img ng-src = " {{user.avatar_url}} " title = " {{user.name}} " >
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>stars</th>
+                <th>Language</th >
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat = "repo in repos | orderBy:'-stargazers_count'">
+                <td>{{repo.name}}</td>
+                <td>{{repo.stargazers_count | number }}</td>
+                <td>{{repo.language}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

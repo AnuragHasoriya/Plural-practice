@@ -1,0 +1,21 @@
+<html ng-app = "GitData">
+    <head >
+            
+    </head>
+    <body ng-controller = "Settings">
+        <div> <h1> {{message}} </h1> </div>
+         {{countdown}}</br> 
+        <div>
+            <form name="getUser" ng-submit="search(username)">
+                <input type="search" required placeholder="enter anme to find" ng-model="username">
+                <input type="submit" value="search">
+            </form>   
+        </div>
+        <div ng-include = "'userdetails.html'" ng-show= "user" ></div>
+
+        <!-- <script src = "assets\lib\angular-ui-router.js"></script> -->
+        <script src="assets\lib\angular.min.js"></script>
+            <script type= "text/javascript" src="app\js\app.js"></script>
+            <script type= "text/javascript" src="app\services\http.service.js"></script>
+    </body>
+</html>
